@@ -11,3 +11,6 @@
 - Accessibilty
 - Detect in browser if PDF is locked or encrypted
 - Detect if PDF is corrupted
+
+## Server side
+- Verify a signature in a PDF file
