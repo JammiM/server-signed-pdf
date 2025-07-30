@@ -1,2 +1,2 @@
-# server-signed-pdf
-sends it to a mock server for signing, and then views the signed PDF on their device.
+# User uploads a pdf file to a mock server, the server 'signs' it and allows the user to download it and previews it on their device.
+
