@@ -14,3 +14,4 @@
 
 ## Server side
 - Verify a signature in a PDF file
+- Validate the uploaded file is a PDF
