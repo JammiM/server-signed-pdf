@@ -7,7 +7,11 @@
   </head>
   <body>
     <main>
-      <form action="/upload_pdf" method="post" enctype="multipart/form-data">
+      <form
+        action="http://localhost:3000/upload_pdf"
+        method="post"
+        enctype="multipart/form-data"
+      >
         <label for="pdf-to-sign">Choose a pdf to sign:</label>
 
         <input type="file" id="pdf-to-sign" name="pdf-to-sign" accept=".pdf" />
