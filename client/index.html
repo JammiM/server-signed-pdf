@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <main>
+      <form action="/upload_pdf" method="post" enctype="multipart/form-data">
+        <label for="pdf-to-sign">Choose a pdf to sign:</label>
+
+        <input type="file" id="pdf-to-sign" name="pdf-to-sign" accept=".pdf" />
+        <button type="submit">submit</button>
+      </form>
+    </main>
+  </body>
+</html>
