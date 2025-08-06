@@ -3,12 +3,18 @@ import globals from "globals";
 import tseslint from "typescript-eslint";
 import { defineConfig } from "eslint/config";
 
+// Reference : https://eslint.org/docs/latest/use/configure/migration-guide#configuring-language-options
+
 export default defineConfig([
   {
     files: ["**/*.{js,mjs,cjs,ts,mts,cts}"],
     plugins: { js },
     extends: ["js/recommended"],
-    languageOptions: { globals: globals.browser },
+    languageOptions: {
+      globals: {
+        ...globals.node,
+      },
+    },
   },
   tseslint.configs.recommended,
 ]);
