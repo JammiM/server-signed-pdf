@@ -9,12 +9,14 @@ const handlePdfUpload = function (request, response, next) {
   }
 };
 
-const handleSignedPdf = function (request, response) {
+const handleSignedPdf = function (request, response, next) {
   response.send("signed pdf GET response");
+  next();
 };
 
-const handleFilePath = function (request, response) {
+const handleFilePath = function (request, response, next) {
   console.log(request.file.path);
+  next();
 };
 
 export { handlePdfUpload, handleSignedPdf, handleFilePath };

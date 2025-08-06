@@ -1,3 +1,5 @@
+import path from "path";
+
 const createPdfDownloadLink = function (request, response, next) {
   const filePath = path.join(__dirname, request.file.path);
 
