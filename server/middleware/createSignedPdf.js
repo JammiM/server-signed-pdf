@@ -17,9 +17,8 @@ async function createPdf() {
   });
 
   const pdfBytes = await pdfDoc.save();
-  const pdfBuffer = Buffer.from(pdfBytes.buffer, "binary");
 
-  return pdfBuffer;
+  return pdfBytes;
 }
 
 const createSignedPdf = function (req, response, next) {
