@@ -9,7 +9,7 @@ async function createPdf() {
   const { width, height } = page.getSize();
   const fontSize = 30;
   page.drawText("Creating PDFs in JavaScript is awesome!", {
-    x: width + 50,
+    x: 50,
     y: height - 4 * fontSize,
     size: fontSize,
     font: timesRomanFont,
