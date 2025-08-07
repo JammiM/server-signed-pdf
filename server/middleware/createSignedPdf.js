@@ -30,6 +30,15 @@ const createSignedPdf = function (req, response, next) {
         console.error(err.message);
       }
       writeFromBuffer(pdfBuffer);
+
+      const signedPdf = "http://localhost:3000/static/1754563472120-Signed.pdf";
+      const responseText = `<a href=${signedPdf} download="signed-pdf.pdf" target="_blank">Download signe pdf</a>`;
+
+      response.statusCode = 200;
+      response.type("html");
+      response.send(responseText);
+
+      next();
     })
     .catch(function (err) {
       console.error(err.message);
