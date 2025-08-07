@@ -14,6 +14,6 @@ const pdfHandler = [handlePdfUpload, createSignedPdf];
 
 router.post("/upload_pdf", upload.single("pdf-to-sign"), pdfHandler);
 
-router.get("/signed_pdf", handleSignedPdf);
+router.get("/signed_pdf_file", handleSignedPdf);
 
 export { router };
