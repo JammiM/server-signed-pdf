@@ -42,10 +42,9 @@ const pdfUploadCtrl = async function (request, response) {
         }
       });
 
-      const downloadUrl = `/static/signed-${request.file.filename}`;
-      response.send(
-        `<a href="${downloadUrl}" target="_blank">Download signed PDF</a>`
-      );
+      response.render("pages/download", {
+        downloadUrl: `/static/signed-${request.file.filename}`,
+      });
     } catch (err) {
       console.error(err);
       response.status(500).send("Failed to edit PDF.");
