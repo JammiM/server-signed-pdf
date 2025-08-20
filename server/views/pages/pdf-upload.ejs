@@ -22,11 +22,29 @@
               name="pdf-to-sign"
               accept=".pdf"
             />
-            <button type="submit">submit</button>
+            <button id="submitBtn" type="submit">submit</button>
           </form>
         </div>
       </div>
     </main>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const fileInput = document.getElementById("pdf-to-sign");
+        const submitBtn = document.getElementById("submitBtn");
+
+        fileInput.files.length = 0;
+        submitBtn.disabled = true;
+
+        fileInput.addEventListener("change", () => {
+          if (fileInput.files.length > 0) {
+            submitBtn.disabled = false;
+          } else {
+            submitBtn.disabled = true;
+          }
+        });
+      });
+    </script>
 
     <%- include('../partials/footer'); %>
   </body>
