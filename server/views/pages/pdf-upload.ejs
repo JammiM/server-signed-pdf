@@ -3,22 +3,31 @@
   <head>
     <%- include('../partials/head'); %>
   </head>
-  <body class="container">
-    <header><%- include('../partials/header'); %></header>
+  <body class="l-application l-site u-align--center" role="presentation">
+    <%- include('../partials/header'); %>
 
-    <main>
-      <form
-        method="post"
-        action='<%-  request.protocol + "://" + request.get("host") %>/api/upload_pdf'
-        enctype="multipart/form-data"
-      >
-        <label for="pdf-to-sign">Choose a pdf to sign:</label>
+    <main class="l-main">
+      <div class="p-card u-vertically-center" style="min-height: 500px">
+        <div class="p-card">
+          <form
+            method="post"
+            action='<%-  request.protocol + "://" + request.get("host") %>/api/upload_pdf'
+            enctype="multipart/form-data"
+          >
+            <label for="pdf-to-sign">Choose a pdf to sign:</label>
 
-        <input type="file" id="pdf-to-sign" name="pdf-to-sign" accept=".pdf" />
-        <button type="submit">submit</button>
-      </form>
+            <input
+              type="file"
+              id="pdf-to-sign"
+              name="pdf-to-sign"
+              accept=".pdf"
+            />
+            <button type="submit">submit</button>
+          </form>
+        </div>
+      </div>
     </main>
 
-    <footer><%- include('../partials/footer'); %></footer>
+    <%- include('../partials/footer'); %>
   </body>
 </html>
