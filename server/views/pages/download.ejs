@@ -8,6 +8,25 @@
     <main>
       <div class="jumbotron">
         <a href="<%= downloadUrl %>" target="_blank">Download signed PDF</a>
+
+        <object
+          data="<%= downloadUrl %>"
+          type="application/pdf"
+          width="100%"
+          height="100%"
+        >
+          <iframe
+            src="<%= downloadUrl %>"
+            width="100%"
+            height="100%"
+            style="border: none"
+          >
+            <p>
+              Your browser does not support PDF viewing.
+              <a href="<%= downloadUrl %>">Download the PDF</a>.
+            </p>
+          </iframe>
+        </object>
       </div>
     </main>
     <footer><%- include('../partials/footer'); %></footer>
