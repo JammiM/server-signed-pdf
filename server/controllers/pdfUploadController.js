@@ -37,6 +37,7 @@ const pdfUploadCtrl = async function (request, response) {
       writeFile(editedPath, modifiedBuffer, "utf-8", (err) => {
         if (err) {
           console.error(err);
+          response.status(500).send("Failed to write edited PDF.");
         } else {
           console.log("File written & Fire clean up / unlink");
         }
