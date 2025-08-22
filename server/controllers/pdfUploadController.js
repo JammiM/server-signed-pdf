@@ -48,20 +48,21 @@ const pdfUploadCtrl = async function (request, response) {
       });
     } catch (err) {
       console.error(err);
-      cleanUpFile(editedPath);
-      cleanUpFile(uploadedPath);
+      cleanUpAllFilesInArray([editedPath, uploadedPath]);
       response.status(500).send("Failed to edit PDF.");
     }
   }
 };
 
-function cleanUpFile(filePath) {
-  unlink(filePath, (err) => {
-    if (err) {
-      console.error("Error deleting file:", err);
-    } else {
-      console.log("File deleted successfully:", filePath);
-    }
+function cleanUpAllFilesInArray(filePaths) {
+  filePaths.forEach((filePath) => {
+    unlink(filePath, (err) => {
+      if (err) {
+        console.error("Error deleting file:", err);
+      } else {
+        console.log("File deleted successfully:", filePath);
+      }
+    });
   });
 }
 
