@@ -1,6 +1,6 @@
 import { PDFDocument, rgb } from "pdf-lib";
 import path from "path";
-import { readFileSync, writeFile } from "fs";
+import { readFileSync, writeFile, unlink } from "fs";
 
 const pdfUploadCtrl = async function (request, response) {
   if (!request.file.mimetype == "application/pdf") {
@@ -48,9 +48,21 @@ const pdfUploadCtrl = async function (request, response) {
       });
     } catch (err) {
       console.error(err);
+      cleanUpFile(editedPath);
+      cleanUpFile(uploadedPath);
       response.status(500).send("Failed to edit PDF.");
     }
   }
 };
+
+function cleanUpFile(filePath) {
+  unlink(filePath, (err) => {
+    if (err) {
+      console.error("Error deleting file:", err);
+    } else {
+      console.log("File deleted successfully:", filePath);
+    }
+  });
+}
 
 export { pdfUploadCtrl };
