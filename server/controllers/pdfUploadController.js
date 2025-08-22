@@ -43,8 +43,13 @@ const pdfUploadCtrl = async function (request, response) {
         }
       });
 
+      setTimeout(() => {
+        cleanUpAllFilesInArray([editedPath, uploadedPath]);
+      }, 600000);
+
       response.render("pages/download", {
         downloadUrl: `/static/signed-${request.file.filename}`,
+        request,
       });
     } catch (err) {
       console.error(err);

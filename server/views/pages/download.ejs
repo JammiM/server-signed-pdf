@@ -8,7 +8,13 @@
     <main>
       <div class="jumbotron">
         <a href="<%= downloadUrl %>" target="_blank">Download signed PDF</a>
-
+        <h3>Files are deleted after 10 minutes</h3>
+        <p>
+          The signed PDF will be deleted after 10 minutes.
+          <a href='<%-  request.protocol + "://" + request.get("host") %>/api'
+            >Click here to go back to pdf upload page</a
+          >
+        </p>
         <object
           data="<%= downloadUrl %>"
           type="application/pdf"
