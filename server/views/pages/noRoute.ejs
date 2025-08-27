@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head'); %>
+  </head>
+  <body class="l-application l-site u-align--center" role="presentation">
+    <%- include('../partials/header'); %>
+
+    <main class="l-main">
+      <div class="p-card u-vertically-center" style="min-height: 500px">
+        <article class="p-card">
+          <h1>404 not pages here</h1>
+
+          <p>
+            Click
+            <a
+              href='<%-  request.protocol + "://" + request.get("host") %>/api/'
+              >here</a
+            >
+            to go to the home page
+          </p>
+        </article>
+      </div>
+    </main>
+
+    <%- include('../partials/footer'); %>
+  </body>
+</html>
