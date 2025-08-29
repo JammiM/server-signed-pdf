@@ -1,6 +1,4 @@
-# User uploads a pdf file to a mock server, the server 'signs' it and allows the user to download it and previews it on their device.
-
-- Validate the uploaded file is a PDF
+# Server simulates signing of a uploaded pdf file, then returns a preview of the signed file
 
 ## Setup
 
@@ -33,6 +31,8 @@
 - [x] Only one file
 - [x] File size limit (5MB)
 - [x] Disable the submit button until a PDF file is selected
+- [x] PDF files with errors are automatically deleted
+- [ ] Add a check to see if the port number is already in use.
 - [ ] Drag and Drop
 - [ ] Upload Progress Bar
 - [ ] Accessibilty
@@ -43,8 +43,10 @@
 - [ ] e.g `process.on('SIGTERM'`, `process.on('SIGTERM'`
 - [ ] Add more WCAG 2.1 Level AA testing
 - [ ] Either add more to the Client side or leave everything on the server.
-- [ ] Probably replace ejs with handlebars,
-- [ ] Add an error handler for Very large PDF files.
+- [ ] Probably replace ejs with handlebars (as hb is easier to use),
+- [ ] Add an error handler for very large PDF files (over 5MB).
+- [ ] Add more configuration to customize where the signing happens and on which page, within the `.env` e.g `SIGNATURE_PAGE_INDEX`
+- [ ] Change the styling for the height on the object element in download.ejs to be more dynamic/closer to `height="auto"` instead of `height="500px"`, which was just a temporary fix, to readily show the pdf controls.
 
 ### Testing (todo)
 
