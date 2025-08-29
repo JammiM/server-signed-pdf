@@ -15,3 +15,10 @@
 ## Server side
 - Verify a signature in a PDF file
 - Validate the uploaded file is a PDF
+
+
+
+## Issues to address
+- MulterError: File too large
+- Corrupted PDF files
+- password-protected PDF files
