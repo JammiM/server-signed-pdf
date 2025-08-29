@@ -47,6 +47,9 @@
 - [ ] Add an error handler for very large PDF files (over 5MB).
 - [ ] Add more configuration to customize where the signing happens and on which page, within the `.env` e.g `SIGNATURE_PAGE_INDEX`
 - [ ] Change the styling for the height on the object element in download.ejs to be more dynamic/closer to `height="auto"` instead of `height="500px"`, which was just a temporary fix, to readily show the pdf controls.
+- [ ] Add an error handler for very large PDF files (over 5MB).
+- [ ] Add a simple github actions CI/CD pipeline
+- [ ] Potentially Dockerize and deploy to an hosting platform
 
 ### Testing (todo)
 
